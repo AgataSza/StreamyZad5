@@ -8,28 +8,32 @@ import java.util.List;
 
 @Getter
 @AllArgsConstructor
-public class Life {
+public class Animal {
 
-    private final String country;
-    private final List<String> animals;
-    private final List<String> plants;
 
+    private final String species;
+    private final int numberOfLegs;
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
     @Override
     public boolean equals(Object o) {
         if (o == this) {
             return true;
         }
 
-        if (!(o instanceof Life)) {
+        if (!(o instanceof Animal)) {
             return false;
         }
 
-        Life c = (Life) o;
+        Animal c = (Animal) o;
         return this.toString().equals(c.toString());
     }
 
     @Override
-    public String toString() {
-        return new Gson().toJson(this);
+    public int hashCode() {
+        return 0;
     }
 }

@@ -8,11 +8,16 @@ import java.util.List;
 
 @Getter
 @AllArgsConstructor
-public class Life {
+public class Plant {
 
-    private final String country;
-    private final List<String> animals;
-    private final List<String> plants;
+    private final String species;
+    private final Double standardHigh;
+    private final String fruitName;
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -20,16 +25,16 @@ public class Life {
             return true;
         }
 
-        if (!(o instanceof Life)) {
+        if (!(o instanceof Plant)) {
             return false;
         }
 
-        Life c = (Life) o;
+        Plant c = (Plant) o;
         return this.toString().equals(c.toString());
     }
 
     @Override
-    public String toString() {
-        return new Gson().toJson(this);
+    public int hashCode() {
+        return 0;
     }
 }
