@@ -11,8 +11,8 @@ import java.util.List;
 public class Life {
 
     private final String country;
-    private final List<String> animals;
-    private final List<String> plants;
+    private final List<Animal> animals;
+    private final List<Plant> plants;
 
     @Override
     public boolean equals(Object o) {

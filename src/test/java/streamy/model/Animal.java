@@ -13,6 +13,7 @@ public class Animal {
 
     private final String species;
     private final int numberOfLegs;
+    private final boolean venomous;
 
     @Override
     public String toString() {
